@@ -31,6 +31,7 @@ FROM produto
 WHERE preco > 10
 -- RETORNA VALORES ACIMA DE 10 REAIS EM SEUS PREÇOS
 
+
 SELECT nome, preco
 FROM produto
 WHERE ativo = TRUE
@@ -81,4 +82,21 @@ where preco BETWEEN 8.00 and 15.00;
 
 select id_pedido, data_pedido, valor_total
 from pedido 
-where data_pedido BETWEEN ''
+where data_pedido BETWEEN '2026-09-01 00:00:00' and '2026-09-30 23:59;59';
+
+
+-- ex:8 in com várias possibilidades
+select nome,cidade
+from cliente
+where cidade in ('Limeira', 'Americana', 'Piracicaba');
+
+select nome, cidade
+from cliente 
+where cidade not in ('Limeira','Campinas');
+
+ --ex9: exemplo com textos ou pesquisar por textos - LIKE
+ -- coringas 
+ -- % vários caracteres
+ -- _exatamente um caracter 
+
+ select nome 
