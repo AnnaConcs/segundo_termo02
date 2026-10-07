@@ -1,0 +1,46 @@
+.cabecalho {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #7e5a2b;
+    color: black;
+    padding: 10px;
+
+}
+
+/* .ul {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+
+body {
+    background-color: #94734c;
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+    justify-content: flex-end;
+}
+
+nav ul {
+    text-decoration: none;
+    color: #000000;
+    justify-content: flex-end;
+    background-color: rgba(139, 78, 9, 0.493);
+    padding: 10px;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style: none;
+}
+
+/* h1 {
+    float: left;
+    padding-bottom: 10px;
+} */
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
