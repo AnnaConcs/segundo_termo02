@@ -1,0 +1,39 @@
+.equipe {
+display: flex;
+/* justify-content: space-around; */
+gap: 30px;
+}
+
+.grupo {
+    display: flex;
+    /* justify-content: flex-start; texto fica tudo junto na parte de cima da página */
+   /* justify-content: center; o texto fica tudo junto no centro da tela*/
+    /* justify-content: flex-end; o texto fica tudo junto na parte de baixo da tela*/
+    /* justify-content: space-between; o texto se separa em tres colunas nos cantos e no centro da tela */
+     justify-content: space-evenly; /*texto continua separado em 3 colunas mas de forma centralizada */
+}
+
+.colonia {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    align-items: flex-end;
+}
+.colonizamos {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    align-items: flex-end;
+}
+.colonizaram {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    align-items: flex-end;
+}
+.principal {
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+}
+
