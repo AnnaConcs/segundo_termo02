@@ -10,7 +10,7 @@ USE smartcoffee_dml_bruno;
 -- IMPORTANTE:
 -- Para toda questão de UPDATE ou DELETE, escreva primeiro um SELECT
 -- com o mesmo WHERE para validar os registros afetados.
-SELECT * FROM categoria
+SELECT * FROM pedido
 -- PARTE A - INSERT
 
 -- 1. Cadastre dois novos clientes com dados diferentes.
@@ -67,21 +67,41 @@ set preco = preco * 0.08
 where id_categoria =  11;
 
 -- 10. Altere o status do pedido criado para 'PREPARANDO'.
-
+update pedido
+set status = 'PREPARANDO'
+where id_pedido = @pedido_atividade;
 
 
 -- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
 --     Você pode calcular previamente com SELECT SUM(quantidade * preco_unitario).
-
+update pedido
+set valor_total = (select SUM(quantidade * preco_unitario) from item_pedido where id_pedido = @pedido_atividade)
+where id_pedido = @pedido_atividade;
 
 -- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
-
+update produto
+set ativo = false
+where id_produto = 29;
 
 -- PARTE C - DELETE
 
 -- 13. Crie um cliente de teste sem pedidos.
 --     Depois localize e exclua apenas esse cliente.
+insert into cliente_teste1 (
+    id_cliente,
+    nome,
+    email,
+    telefone,
+    cidade
+) values (
+    null,
+    'Teste Exclusão',
+    'teste@email.com',
+    '19999999999',
+    'Teste'
+);
 
+)
 
 -- 14. Tente excluir um cliente da base original que possua pedidos.
 --     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
@@ -93,3 +113,5 @@ where id_categoria =  11;
 
 
 -- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+
+SELECT * FROM cliente;
