@@ -62,9 +62,12 @@ SET telefone = '19956732126',
 WHERE id_cliente = 39;
 
 -- 9. Aumente em 8% o preço dos produtos da categoria 'Especiais da Casa'.
-
+update produto
+set preco = preco * 0.08
+where id_categoria =  11;
 
 -- 10. Altere o status do pedido criado para 'PREPARANDO'.
+
 
 
 -- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
