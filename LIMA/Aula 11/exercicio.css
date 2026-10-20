@@ -1,0 +1,51 @@
+/* 1.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+} */
+
+/* 2 */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* 3 */
+.lab-grid {
+    display: grid;
+     grid-template-columns: 2fr 1fr; /*Deu um espeçamento na segunda coluna, por conta do 1fr, que foi uma coluna pro lado.*/
+} 
+
+/* 4 */
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+} 
+
+/* 5 */
+/* .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 600px) {
+    .lab-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+} */
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+/* ele se ajusta ao tamanho que eu defini, que é 220px, e se for maior que isso, ele vai se ajustar ao tamanho da tela. */
+
