@@ -281,12 +281,12 @@ select c.nome as cliente, count(p.id_pedido)as qtde_pedidos, sum(p.valor_total) 
 from cliente as c
 inner join pedido as p
 on p.id_cliente = c.id_cliente
-where p.status = 'PREPARANDO'
+where p.status = 'FINALIZADOS'
 group by c.id_cliente, c.nome
 order by total_comprado desc;
 
 -- RELATÓRIO COMPLETO DO PEDIDO
--- EX 25: COMBINAR VÁRIAS TABELAS EM UMA CONSULULTA
+-- EX 25: COMBINAR VÁRIAS TABELAS EM UMA CONSULTA
 select p.id_pedido, date_format(p.data_pedido, '%d %m %Y %H: %i') as data, c.nome as cliente, pr.nome as produto, ip.quantidade, ip.preco_unitario, ip.quantidade * ip.preco_unitario as subtotal
 from pedido as p 
 inner join cliente as c
