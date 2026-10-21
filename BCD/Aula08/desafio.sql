@@ -101,7 +101,7 @@ insert into cliente_teste1 (
     'Teste'
 );
 
-)
+
 
 -- 14. Tente excluir um cliente da base original que possua pedidos.
 --     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
