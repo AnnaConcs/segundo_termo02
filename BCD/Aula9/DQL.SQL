@@ -224,3 +224,128 @@ order by colunas
 limit quantidade;
 -- dica para seguir em ordem lógica para uma consulta parcial ou completa
 -------------------------------------------------------------------------
+
+select count (nome) as total_produtos
+from produto;
+
+-- part II - relacionamento entre tabelas - joins
+-- join - junção de tabelas
+-- ex 19: pedidos com nome do cliente 
+
+-- inner join - retorna registros que possuem correspondências entre tabelas
+select p.id_pedido, p.data_pedido, c.nome as cliente, p.valor_total
+from pedido as p
+inner join cliente as c
+on C.id_cliente = P.id_cliente;
+
+--OBS: Relacione o cliente cujo id_cliente é igual ap id_cliente gravado no pedido
+-- p e c são apelidos ou aliases para deixar mais curtas e legíveis
+
+-- left join - mantém todos os registros da tebela da esquerda mesmo quando não possui correspondência na tabela da direita
+-- ex 20: todos os clientes, inclusive quem nunca comprou ou quem nunca realizou pedido
+select c.nome, p.id_pedido, p.data_pedido
+from cliente as c
+left join pedido as P
+on p.id_cliente = c.id_cliente
+order by c.nome;
+
+-- ex 21: clientes sem pedidos
+select c.id_cliente, c.nome
+from cliente as c
+left join pedido as p
+on p.id_cliente = c.id_cliente
+where p.id_cliente is null;
+
+-- join com três tabelas
+-- ex 22: itens de pediddo com nome do produto
+select p.id_pedido , pr.nome as produto, ip.quantidade, ip.preco_unitario,
+ip.quantidade * ip.preco_unitario as subtotal
+from pedido as p
+inner join item_pedido as ip
+on ip.id_pedido = p.id_pedido
+inner join produto as pr
+on pr.id_produto = ip.id_produto
+order by p.id_pedido;
+
+-- ex 23 - agregação + joins
+-- quantidade de produtos por categoria
+select ca.nome as categoria, count(pr.id_produto) as qtde_produtos
+from categoria as ca
+inner join produto as pr
+on pr.id_categoria = ca.id_categoria
+group by ca.id_categoria, ca.nome
+order by qtde_produtos desc;
+
+-- ex 24: total comprado por cliente
+select c.nome as cliente, count(p.id_pedido)as qtde_pedidos, sum(p.valor_total) as total_comprado
+from cliente as c
+inner join pedido as p
+on p.id_cliente = c.id_cliente
+where p.status = 'PREPARANDO'
+group by c.id_cliente, c.nome
+order by total_comprado desc;
+
+-- RELATÓRIO COMPLETO DO PEDIDO
+-- EX 25: COMBINAR VÁRIAS TABELAS EM UMA CONSULULTA
+select p.id_pedido, date_format(p.data_pedido, '%d %m %Y %H: %i') as data, c.nome as cliente, pr.nome as produto, ip.quantidade, ip.preco_unitario, ip.quantidade * ip.preco_unitario as subtotal
+from pedido as p 
+inner join cliente as c
+on c.id_cliente = p.id_cliente
+inner join item_pedido as IP
+on ip.id_pedido = p.id_cliente
+inner join produto as pr
+on pr.id_produto = ip.id_produto
+order by p.id_pedido, pr.nome;
+
+-- obs: padrão de formatação de data no Brasil
+-- date_format(p.data_pedido, '%d %m %Y %H: %i')
+
+criando classificações
+ex 26 - case - permite construir uma classificação baseada em regras
+
+select nome,preco,
+CASE 
+    WHEN preco < 8.00 THEN 'Econômico'
+    WHEN preco <= 15.00 THEN 'Intermediário'  
+    ELSE  'Premium'
+END AS classificação
+FROM produto
+ORDER BY preco;
+
+-- SUBCONSULTA
+-- é uma consulta dentro de outra consulta
+-- ex 27: produtos acima do preço médio
+select nome, preco 
+from produto
+where preco > (select avg(preco)
+from produto
+)
+order by preco desc;
+
+--demosntração completa e final
+-- passo 1 - visualizar produtos 
+select * from produto;
+-- passo 2- selecionar somente o necessário
+select nome, preco from produto;
+-- passo 3 - filtro
+select nome, preco from produto
+where preco >= 10;
+-- passo 4 - ordenar informações
+select nome, preco from produto
+where preco >= 10.00
+order by preco desc;
+-- passo 5 - mostrar categoria
+select pr.nome as produto, ca.nome as categoria, pr.preco 
+from produto as pr 
+inner join categoria as ca
+on ca.id_categoria = PR.id_categoria
+where pr.preco >= 10.00
+order by pr.preco desc;
+--passo 6 - pergunta gerenciual
+select ca.nome as categoria, count(pr.id_produto) as produtos, round(avg
+(pr.preco),2) as preco_médio
+from categoria as CA
+inner join produto as pr
+on pr.id_categoria = ca.id_categoria
+group by ca.id_categoria, ca.nome
+order by preco_médio desc;
