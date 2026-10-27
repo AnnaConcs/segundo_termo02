@@ -1,6 +1,6 @@
 
 .botao {
-  background: #8240ce;
+  background: #5e40ce;
   color: white;
   padding: 13px 26px;
   border: none;
@@ -15,3 +15,21 @@
 .botao:active {
   transform: translateY(-2px) scale(0.97);
 }
+
+.cabecalho {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #5e6ad3;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+
+}
+body {
+    background-color: #6e73a7;
+}
+
+.equipe {
+display: flex;
+/* justify-content: space-around; */
+gap: 30px;
+}
+
