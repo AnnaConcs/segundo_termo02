@@ -66,4 +66,13 @@ update livro
 set quantidade_disponivel = quantidade_disponivel + 2
 where id_livro =  1;
 
+INSERT INTO usuario (nome, email, telefone, ativo) VALUES
+('Heitor Silva', 'Heitora@email.com', '19999470001', TRUE);
 
+delete from usuario
+where id_usuario = 5;
+delete from usuario
+where id_usuario = 1;
+-- o código da erro e não deixa apagar pois tem um critério quando tem a chave estrangeira.
+
+select autor AS livro, quantidade_disponivel AS status from livro;
