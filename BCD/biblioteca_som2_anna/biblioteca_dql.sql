@@ -76,3 +76,5 @@ where id_usuario = 1;
 -- o código da erro e não deixa apagar pois tem um critério quando tem a chave estrangeira.
 
 select autor AS livro, quantidade_disponivel AS status from livro;
+
+-- lllll
