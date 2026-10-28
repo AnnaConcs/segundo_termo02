@@ -78,3 +78,5 @@ where id_usuario = 1;
 select autor AS livro, quantidade_disponivel AS status from livro;
 
 -- lllll
+
+-- llll
