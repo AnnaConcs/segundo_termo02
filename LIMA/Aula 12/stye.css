@@ -16,6 +16,13 @@ Podemos guardar cores em um único local */
     --fonte_secundaria: "Poppins" , Helvetica;
 
     /* Espaçamentos */
+    --espaco-xs: 4px;
+    --espaco-sm: 8px;
+    --espaco-md: 16px;
+    --espaco-lg: 24px;
+    --espaco-xl: 48px;
+    --espaco-xxl:80px;
+
 
     /* obs: root é responsável por disponibilizar um espaço para cadastro de variaveis do elemento raiz do documento. Variaveis CSS glonais. */
 }
@@ -195,6 +202,6 @@ h3 {
 }
 
 .img-cartao:hover {
-    transform: translateY(-4px);
+    transform: translateY(8px);
     box-shadow: 0 12px 30px rgba(43, 23, 13, 0.12)
 }
