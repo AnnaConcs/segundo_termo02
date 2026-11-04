@@ -139,13 +139,20 @@ create index idx_pedido_cliente_data on pedido (id_cliente, data_pedido);
 select * from item_pedido
 where id_pedido = 20;
 
-create index idx_item_pedido on pedido (id_pedido);
- drop index idx_item_pedido;
+create index idx_item_pedido on pedido;
+ drop index from pedido;
+
+-- explain utilizar para buscar informações extras sobre o conteúdo de campos
+
+explain select * from pedido
+where id_cliente = 5 and data_pedido >= '2026-10-01';
+
+-- obs final: 
+-- index não corrige tabela errada 
+-- modelo errado + index = modelo errado mais rápido
+-- modelo correto + index justificado = estrutura consiste e acesso eficiente
 
 
-
-
- 
 insert into pedido values (1, now(),'Anna A', 'anna@email.com',
 'Sao Paulo', 'Chocolate quente', 'Barca de Carne',null, 'capuccino', 'Salgado',null,1,2,null);
 
