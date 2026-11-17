@@ -88,11 +88,38 @@ INSERT INTO categoria (descricao) values
 ('Tiro');
 
 insert into jogo (titulo, codigo, ano_lancamento, quantidade_disponivel, id_plataforma, id_categoria, desenvolvedora) values 
-('Free Fire', 'MB-001', '2017', '4', '2', '6', '111Dots studio'),
-('Clash Royale', 'MB-002', '2016', '5', '3', '7', 'supercell'),
-('Final Fantasy', 'XB-001', '2016', '6', '4', '8', 'Sqaure Enix'),
-('Dead Island', 'XB-002', '2023', '7', '5', '9', 'Dambuster Studios'),
-('GTA5', 'PS5-001', '2013', '8', '6', '10', 'Rockstar Games'),
-('Alan Wake', 'PS5-002', '2010', '9', '7', '11', 'Nextage');
+('Free Fire', 'MB-001', 2017, 4, 2, 1, '111Dots studio'),
+('Clash Royale', 'MB-002', 2016, 5, 1, 2, 'supercell'),
+('Final Fantasy', 'XB-001', 2016, 6, 2, 1, 'Sqaure Enix'),
+('Dead Island', 'XB-002', 2023, 7, 1, 2, 'Dambuster Studios'),
+('GTA5', 'PS5-001', 2013, 8, 2, 1, 'Rockstar Games'),
+('Alan Wake', 'PS5-002', 2010, 9, 2, 2, 'Nextage');
 
-select * from categoria
+select * from cliente;
+
+insert into locacao (data_retirada, data_prevista, data_devolucao, status_locacao, id_cliente, id_jogo ) values
+('2026-09-02 08:19:00', '2026-09-03', '2026-09-04', 'ABERTA', 1, 43),
+('2026-09-01 08:19:00', '2026-09-05', '2026-09-06', 'ABERTA', 1, 44),
+('2026-09-06 08:19:00', '2026-09-07', '2026-09-08', 'ABERTA', 2, 45);
+
+
+
+
+
+UPDATE cliente
+SET telefone = '19999897865'
+WHERE id_cliente = 2;
+
+UPDATE jogo
+SET QUANTIDADE_DISPONIVEL = QUANTIDADE_DISPONIVEL + 2
+WHERE ano_lancamento >= 2000;
+
+INSERT INTO cliente (nome, email, telefone, ativo) VALUES
+('Heitor Silva', 'Heitora@email.com', '19999470001', TRUE);
+delete from cliente
+where id_cliente = 6;
+
+delete from cliente
+where id_cliente = 1;
+
+-- não dá para excluir pois tem uma key constraint e isso impede a exclusão.
