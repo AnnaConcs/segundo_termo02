@@ -123,3 +123,9 @@ delete from cliente
 where id_cliente = 1;
 
 -- não dá para excluir pois tem uma key constraint e isso impede a exclusão.
+
+SELECT TITULO, ano_lancamento, QUANTIDADE_DISPONIVEL FROM jogo;
+
+SELECT TITULO, quantidade_disponivel FROM jogo
+WHERE QUANTIDADE_DISPONIVEL > 2
+ORDER BY QUANTIDADE_DISPONIVEL desc;
