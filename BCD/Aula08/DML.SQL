@@ -113,4 +113,35 @@ insert into forma_pagamento (descricao) VALUES
 ('Dinheiro'), ('PIX'), ('Cartão de Crédito'), ('Cartão de Débito');
 
 insert into pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VALUES
-()
+();
+
+-- MENSAGEM DE SUCESSO
+SELECT 'Banco de dados smartcoffee_dml_anna criado com sucesso.' AS mensagem;
+
+--TRANSAÇÕES -- SEGURANÇA E INTEGRIDADE DOS DADOS
+start transaction;
+update produto 
+set preco = preco * 1.50
+where id_categoria = 1;
+
+select id_produto, nome, preco 
+from produto
+where id_categoria = 1;
+
+--desfazer ações
+rollback;
+
+--realizar ou confirma a ação
+commit;
+
+--ex2:
+start TRANSACTION;
+update cliente
+set cidade = 'Limeira'
+where id_cliente = 3;
+commit;
+rollback;
+
+
+
+

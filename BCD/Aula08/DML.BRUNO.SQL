@@ -185,3 +185,4 @@ CREATE TABLE Especiais da Casa (
 
 INSERT INTO Especiais da Casa (nome) VALUES
 ('Lanche'), ('Bebidas Quentes'), ('Tortas'), ('Bolos'), ('Promocoes');
+
