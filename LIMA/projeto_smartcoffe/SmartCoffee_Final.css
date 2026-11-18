@@ -1,0 +1,596 @@
+/* CONFIGURAÇÕES GERAIS */
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f3eb;
+    color: #3e2723;
+    line-height: 1.6;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+ul {
+    list-style: none;
+}
+
+
+section {
+    padding: 80px 8%;
+}
+
+
+
+
+/* CABEÇALHO */
+
+
+.cabecalho-principal {
+    background-color: #3e2723;
+    color: #fff;
+    padding: 20px 8%;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.marca {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.marca span,
+.marca-rodape span {
+    color: #d7a86e;
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+.menu a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+
+.menu a:hover {
+    color: #d7a86e;
+}
+
+
+.menu-destaque a {
+    background-color: #a66a3f;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+
+
+
+/* BANNER PRINCIPAL */
+
+
+.banner {
+    background-color: #eadac5;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    min-height: 500px;
+}
+
+
+.banner-conteudo {
+    flex: 1;
+}
+
+
+.etiqueta {
+    color: #a66a3f;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+
+.banner h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #3e2723;
+}
+
+
+.banner-texto {
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+
+.banner-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.banner-imagem img {
+    width: 100%;
+    max-width: 480px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+
+
+/* BOTÕES */
+
+
+.botao-principal,
+.botao-secundario {
+    display: inline-block;
+    background-color: #8d552f;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+.botao-principal:hover,
+.botao-secundario:hover {
+    background-color: #5d3827;
+    transform: translateY(-3px);
+}
+
+
+
+
+/* SOBRE */
+
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    background-color: #fffaf3;
+}
+
+
+.sobre-imagem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 650px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+.sobre h2,
+.cabecalho-secao h2,
+.ambiente h2,
+.contato h2 {
+    font-size: 32px;
+    color: #3e2723;
+}
+
+
+.sobre-texto {
+    max-width: 650px;
+}
+
+
+
+
+/* SEÇÃO DE CAFÉS */
+
+
+.cafes {
+    background-color: #eadac5;
+    text-align: center;
+}
+
+
+.cabecalho-secao {
+    margin-bottom: 45px;
+}
+
+
+.cabecalho-secao > p:last-child {
+    margin-top: 10px;
+}
+
+
+.lista-cafes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+.lista-cafes li {
+    flex: 1 1 250px;
+    max-width: 340px;
+    display: flex;
+}
+
+
+.card-cafe {
+    background-color: #fffaf3;
+    padding: 25px;
+    border-radius: 18px;
+    width: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+
+    box-shadow: 0 5px 15px rgba(62, 39, 35, 0.10);
+    transition: 0.3s;
+}
+
+
+.card-cafe:hover {
+    transform: translateY(-8px);
+}
+
+
+.card-cafe figure {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.card-cafe img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.card-cafe h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+
+.card-cafe p {
+    margin-bottom: 15px;
+}
+
+
+.card-cafe strong {
+    color: #a66a3f;
+    font-size: 20px;
+    margin-top: auto;
+}
+
+
+
+
+/* AMBIENTE */
+
+
+.ambiente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background-color: #fffaf3;
+}
+
+
+.ambiente-conteudo {
+    flex: 1;
+}
+
+
+.ambiente-conteudo p:not(.etiqueta) {
+    margin: 20px 0;
+}
+
+
+.ambiente-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.ambiente-imagem img {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+
+
+/* CONTATO */
+
+
+.contato {
+    background-color: #eadac5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.contato-cabecalho {
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+.contato form {
+    background-color: #fffaf3;
+    padding: 35px;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 550px;
+
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+}
+
+
+.contato label {
+    font-weight: 600;
+}
+
+
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d7c2aa;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.contato input:focus,
+.contato textarea:focus {
+    border-color: #a66a3f;
+}
+
+
+.contato textarea {
+    resize: vertical;
+}
+
+
+.contato button {
+    background-color: #8d552f;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+
+.contato button:hover {
+    background-color: #5d3827;
+}
+
+
+
+
+/* RODAPÉ */
+
+
+.rodape {
+    background-color: #3e2723;
+    color: white;
+    padding: 45px 8%;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+
+.marca-rodape {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+
+.rodape-navegacao ul,
+.redes-sociais ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+
+.rodape a {
+    transition: 0.3s;
+}
+
+
+.rodape a:hover {
+    color: #d7a86e;
+}
+
+
+.frase-rodape {
+    color: #d7c2aa;
+    font-size: 14px;
+}
+
+
+
+
+/* RESPONSIVIDADE */
+
+
+@media (max-width: 768px) {
+
+
+    .cabecalho-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .menu {
+        gap: 15px;
+    }
+
+
+    section {
+        padding: 55px 6%;
+    }
+
+
+    .banner,
+    .ambiente {
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+    .banner h1 {
+        font-size: 32px;
+    }
+
+
+    .banner-imagem img,
+    .ambiente-imagem img {
+        height: 280px;
+    }
+
+
+    .sobre h2,
+    .cabecalho-secao h2,
+    .ambiente h2,
+    .contato h2 {
+        font-size: 27px;
+    }
+
+
+    .lista-cafes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .lista-cafes li {
+        width: 100%;
+        max-width: 350px;
+    }
+
+
+    .rodape-navegacao ul,
+    .redes-sociais ul {
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+
+    .marca {
+        font-size: 24px;
+    }
+
+
+    .menu {
+        gap: 12px;
+    }
+
+
+    .menu a {
+        font-size: 13px;
+    }
+
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+
+    .contato form {
+        padding: 22px;
+    }
+}
