@@ -98,6 +98,7 @@ img {
     width: 80%;
 }
 
+
 .gal-img figcaption {
     position: absolute;
     inset: auto 0 0 0;
@@ -119,3 +120,92 @@ img {
     object-position: center;
 }
  /* filter: blur(2px); */
+
+ .sobre {
+    /* background-color: cadetblue; */
+    background-image: linear-gradient(-135deg, #3b5672, #3b5672);
+    display: flex;
+    /* border-radius: 100px; */
+    border: 2px solid #132238;
+    height: 80px;
+    align-items: center;
+    
+
+}
+
+body {
+    background: rgb(17, 66, 112);
+
+}
+
+
+/* Abertura Piratas do Caribe */
+.video {
+    background-color: #3b5672;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 0;
+    min-height: 180px;
+}
+
+/* Título à esquerda */
+.abertura1 {
+    width: 55px;
+    min-width: 55px;
+    border: 2px solid #132238;
+    font-size: 22px;
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+/* Texto no centro */
+.conteudo-art {
+    flex: 1;
+    font-family: Cambria, Cochin, Georgia, Times, serif;
+    font-size: 15px;
+    display: block;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Imagem à direita */
+.cartao-img2 {
+    width: 223px;
+    min-width: 223px;
+    margin: 0 30px 0 0;
+}
+
+.cartao-img2 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.sec-ultimo {
+display: flex;
+justify-content: space-around;
+gap: 20px;
+padding: 30px;
+}
+
+
+.programacao, .sobre {
+background-color: #3b5672;
+padding: 20px;
+width: 45%;
+border-radius: 10px;
+}
+
+
+.programacao h2, .sobre h2 {
+color: #0f0925;
+}
+
+
+.rodape {
+background-image: linear-gradient(-135deg, #1a1935, #3b5672);
+text-align: center;
+padding: 20px;
+}
