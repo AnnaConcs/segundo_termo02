@@ -1,35 +1,38 @@
-.inicio {
-    /* background-color: cadetblue; */
-    background-image: linear-gradient(-135deg, #0B0E11, #121619);
-    display: flex;
-    /* border-radius: 100px; */
-    border: 2px solid #132238;
-    height: 80px;
-    align-items: center;
-    
 
+/* CONFIGURAÇÃO GERAL */
+* {
+    box-sizing: border-box;
 }
 
 body {
-    box-sizing: border-box;
+    background: rgb(17, 66, 112);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0 20px;
 }
 
+/* CABEÇALHO */
+.inicio {
+    background-image: linear-gradient(-135deg, #0B0E11, #121619);
+    display: flex;
+    border: 2px solid #132238;
+    height: 80px;
+    align-items: center;
+}
+
 .inicio span {
-    color: #3b5672(40, 26, 133); 
+    color: #3b5672;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
 }
 
 .inicio a {
     text-decoration: none;
-    list-style: none;
+    color: white;
 }
 
+/* NAVEGAÇÃO */
 .navegacao {
-    text-decoration: none;
     list-style: none;
     display: flex;
     gap: 48px;
@@ -39,12 +42,19 @@ body {
     align-content: flex-start;
 }
 
+.navegacao a {
+    text-decoration: none;
+    color: white;
+}
+
+/* INÍCIO DA HISTÓRIA */
 .conteudo-inicial {
     background-color: #3b5672;
     display: flex;
+    align-items: center;
 }
 
-.conteudo-art {
+.conteudo-inicial .conteudo-art {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
     display: flex;
@@ -59,16 +69,17 @@ img {
 }
 
 .cartao-img:hover {
-    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 35);
+    box-shadow: 0 10px 24px -8px rgba(15, 23, 42, 0.35);
     background: rgba(225, 255, 255, 0.25);
     backdrop-filter: blur(14px);
-    transform: translateY(120px) rotate(10,deg);
+    transform: translateY(10px) rotate(10deg);
 }
 
-
+/* GALERIA DE PERSONAGENS */
 .galeria-conteudo {
     background-color: #3b5672;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 10px;
     margin: 0;
 }
 
@@ -76,6 +87,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    width: 100%;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -88,25 +100,28 @@ img {
 .gal-img {
     position: relative;
     width: 100%;
-    height: 280px;
+    aspect-ratio: 3 / 2;
     margin: 0;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 10px;
 }
 
 .gal-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
+    background-color: #3b5672;
 }
 
 .gal-img figcaption {
     position: absolute;
     inset: auto 0 0 0;
-    padding: 14px;
+    padding: 10px;
     color: white;
     background: rgba(0, 0, 0, 0.85);
+    font-size: 13px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
 }
@@ -115,34 +130,15 @@ img {
     transform: translateY(0);
 }
 
-
+/* IMAGEM EXTRA */
 .img-ultimo {
     width: 200px;
     height: 120px;
     object-fit: contain;
     object-position: center;
 }
- /* filter: blur(2px); */
 
- .sobre {
-    /* background-color: cadetblue; */
-    background-image: linear-gradient(-135deg, #3b5672, #3b5672);
-    display: flex;
-    /* border-radius: 100px; */
-    border: 2px solid #132238;
-    height: 80px;
-    align-items: center;
-    
-
-}
-
-body {
-    background: rgb(17, 66, 112);
-
-}
-
-
-/* Abertura Piratas do Caribe */
+/* SEÇÃO SOBRE */
 .video {
     background-color: #3b5672;
     display: flex;
@@ -152,7 +148,6 @@ body {
     min-height: 180px;
 }
 
-/* Título à esquerda */
 .abertura1 {
     width: 55px;
     min-width: 55px;
@@ -162,7 +157,6 @@ body {
     overflow-wrap: break-word;
 }
 
-/* Texto no centro */
 .conteudo-art {
     flex: 1;
     font-family: Cambria, Cochin, Georgia, Times, serif;
@@ -172,7 +166,6 @@ body {
     padding: 10px;
 }
 
-/* Imagem à direita */
 .cartao-img2 {
     width: 223px;
     min-width: 223px;
@@ -186,29 +179,52 @@ body {
     display: block;
 }
 
+/* ÚLTIMA SEÇÃO */
 .sec-ultimo {
-display: flex;
-justify-content: space-around;
-gap: 20px;
-padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 30px;
 }
 
-
-.programacao, .sobre {
-background-color: #3b5672;
-padding: 20px;
-width: 45%;
-border-radius: 10px;
+.programacao,
+.sobre {
+    background-color: #3b5672;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
 }
 
-
-.programacao h2, .sobre h2 {
-color: #0f0925;
+.programacao h2,
+.sobre h2 {
+    color: #0f0925;
 }
 
-
+/* RODAPÉ */
 .rodape {
-background-image: linear-gradient(-135deg, #1a1935, #3b5672);
-text-align: center;
-padding: 20px;
+    background-image: linear-gradient(-135deg, #1a1935, #3b5672);
+    text-align: center;
+    padding: 20px;
+}
+
+/* AJUSTE PARA TELAS MENORES */
+@media (max-width: 550px) {
+    .galeria-img {
+        grid-template-columns: repeat(2, 145px);
+    }
+
+    .navegacao {
+        gap: 12px;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .sec-ultimo {
+        flex-direction: column;
+    }
+
+    .programacao,
+    .sobre {
+        width: 100%;
+    }
 }
