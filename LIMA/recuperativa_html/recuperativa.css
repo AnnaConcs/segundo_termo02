@@ -1,24 +1,27 @@
 
-/* CONFIGURAÇÃO GERAL */
-* {
+
+*{
     box-sizing: border-box;
 }
 
 body {
-    background: rgb(17, 66, 112);
+    background: rgb(0, 0, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0 20px;
 }
 
-/* CABEÇALHO */
+
 .inicio {
     background-image: linear-gradient(-135deg, #0B0E11, #121619);
     display: flex;
     border: 2px solid #132238;
     height: 80px;
     align-items: center;
+    justify-content: center;
 }
+
+
 
 .inicio span {
     color: #3b5672;
@@ -31,25 +34,30 @@ body {
     color: white;
 }
 
-/* NAVEGAÇÃO */
+
 .navegacao {
     list-style: none;
     display: flex;
-    gap: 48px;
+    gap: 80px;
     margin: 20px;
-    padding: 0px 20% 30px;
-    justify-content: flex-start;
-    align-content: flex-start;
+    padding: 0;
+    text-align: end;
+    
 }
 
 .navegacao a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     text-decoration: none;
     color: white;
+    text-align: end;
+    gap: 23px;
+
 }
 
-/* INÍCIO DA HISTÓRIA */
 .conteudo-inicial {
-    background-color: #3b5672;
+    background-color: #132238;
     display: flex;
     align-items: center;
 }
@@ -75,9 +83,9 @@ img {
     transform: translateY(10px) rotate(10deg);
 }
 
-/* GALERIA DE PERSONAGENS */
+
 .galeria-conteudo {
-    background-color: #3b5672;
+    background-color: #132238;
     width: 100%;
     padding: 20px 10px;
     margin: 0;
@@ -95,12 +103,13 @@ img {
 
 .galeria-img li {
     width: 100%;
+    min-width: 0;
 }
 
 .gal-img {
     position: relative;
     width: 100%;
-    aspect-ratio: 3 / 2;
+    height: 260px;
     margin: 0;
     overflow: hidden;
     border-radius: 10px;
@@ -109,28 +118,34 @@ img {
 .gal-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     display: block;
-    background-color: #3b5672;
 }
 
 .gal-img figcaption {
     position: absolute;
-    inset: auto 0 0 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     color: white;
     background: rgba(0, 0, 0, 0.85);
     font-size: 13px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    text-align: center;
 }
 
-.gal-img:hover figcaption {
-    transform: translateY(0);
+
+.gal-img:hover img {
+    transform: scale(1.04);
+    transition: 0.3s;
 }
 
-/* IMAGEM EXTRA */
+
 .img-ultimo {
     width: 200px;
     height: 120px;
@@ -138,9 +153,9 @@ img {
     object-position: center;
 }
 
-/* SEÇÃO SOBRE */
+
 .video {
-    background-color: #3b5672;
+    background-color: #132238;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -157,13 +172,13 @@ img {
     overflow-wrap: break-word;
 }
 
-.conteudo-art {
+.conteudo-art p {
     flex: 1;
-    font-family: Cambria, Cochin, Georgia, Times, serif;
-    font-size: 15px;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 23px;
     display: block;
-    margin: 0;
-    padding: 10px;
+    margin: 2;
+    padding: 20px;
 }
 
 .cartao-img2 {
@@ -179,7 +194,7 @@ img {
     display: block;
 }
 
-/* ÚLTIMA SEÇÃO */
+
 .sec-ultimo {
     display: flex;
     justify-content: space-around;
@@ -189,28 +204,38 @@ img {
 
 .programacao,
 .sobre {
-    background-color: #3b5672;
+    background-color: #132238;
     padding: 20px;
     width: 45%;
     border-radius: 10px;
 }
 
+.programacao p {
+    color: white;
+}
 .programacao h2,
 .sobre h2 {
-    color: #0f0925;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
 }
 
-/* RODAPÉ */
+
 .rodape {
-    background-image: linear-gradient(-135deg, #1a1935, #3b5672);
+    background-image: linear-gradient(-135deg, #1a1935, #132238);
     text-align: center;
     padding: 20px;
+    color: white;
 }
 
-/* AJUSTE PARA TELAS MENORES */
+
 @media (max-width: 550px) {
     .galeria-img {
-        grid-template-columns: repeat(2, 145px);
+        grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+    }
+
+    .gal-img {
+        height: 200px;
     }
 
     .navegacao {
@@ -227,4 +252,16 @@ img {
     .sobre {
         width: 100%;
     }
+}
+
+.sobre p {
+    color: white;
+}
+
+.coteudo-art, p {
+    color: white;
+}
+
+.cartao-img {
+    color: white;
 }
